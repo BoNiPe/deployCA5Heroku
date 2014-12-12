@@ -1,0 +1,37 @@
+<h1>Your Payments</h1>
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading"><b>Your Payments:</b></div>
+    <div class="panel-body">
+        <p>Here you can see a list of ALL of your payments :)</p>
+        <table class="table">
+            <thead>
+            <td><b>Alias:</b></td>
+            <td><b>Order ID:</b></td>
+            <td><b>Payment Amount:</b></td>
+            <td><b>Is Payed</b></td>
+            <td><b>Payment Date:</b></td>
+            </thead>
+            <tbody>
+            <tr ng-repeat="payment in paymentsForSpecificUser">
+                <td>{{payment.userAlias}}</td>
+                <td>{{payment.orderID}}</td>
+                <td>{{payment.paymentAmount}}</td>
+                <td>
+                        {{payment.isPayed}}
+                    </td>
+                <td>{{payment.paymentDate | date:'medium'}}</td>
+                <td>
+                    <a href="#/myPayments/particular/{{payment._id}}">
+                    <button type="button" class="btn btn-primary btn-sm">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Show Details
+                    </button>
+                    </a>
+
+
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
