@@ -57,7 +57,7 @@ var orders = readData('orders.json');
 var products = readData('products.json');
 var payments = readData('payments.json');
 
-var db = mongoose.connect(dbUrl);
+var db = mongoose.connect('mongodb://ca5:ca5@ds061200.mongolab.com:61200/ca5');
 db.connection.once('open', function () {
     console.log("Connected");
 });

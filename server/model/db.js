@@ -1,13 +1,13 @@
 var mongoose = require( 'mongoose' );
-var dbURI;
+var dbURI = 'mongodb://ca5:ca5@ds061200.mongolab.com:61200/ca5';
 
 //This is set by the backend tests
 if( typeof global.TEST_DATABASE != "undefined" ) {
   dbURI = global.TEST_DATABASE;
 }
 else{
-  dbURI = 'mongodb://localhost/wiki';
-  //var dbURI = "mongodb://ca5:ca5@ds061200.mongolab.com:61200/ca5";
+  //dbURI = 'mongodb://localhost/wiki';
+  var dbURI = "mongodb://ca5:ca5@ds061200.mongolab.com:61200/ca5";
 }
 
 mongoose.connect(dbURI);
