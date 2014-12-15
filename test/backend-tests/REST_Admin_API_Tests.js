@@ -398,14 +398,14 @@ describe('Backend testing of Admin REST-API (Payment)', function () {
                 n[0].userAlias.should.equal("Dude");
                 n[0].orderID.should.equal("5477151d917c51ae2633cecc");
                 n[0].paymentAmount.should.equal(62);
-                n[0].isPayed.should.equal("Yes");
+                n[0].isPayed.should.equal(true);
                 //n[0].paymentDate.should.equal("2014-12-20 22:30:10");
 
                 n[1]._id.should.be.length(24);
                 n[1].userAlias.should.equal("SecondDude");
                 n[1].orderID.should.equal("548837024ce335dc192f3d28");
                 n[1].paymentAmount.should.equal(12);
-                n[1].isPayed.should.equal("No");
+                n[1].isPayed.should.equal(true);
                 //n[1].paymentDate.should.equal("2014-12-22 20:30:10");
                 done();
             });
@@ -445,7 +445,7 @@ describe('Backend testing of Admin REST-API (Payment)', function () {
                     "userAlias": "Ni234232k",
                     "orderID": "5477151d917c51ae2633cect",
                     "paymentAmount": 287,
-                    "isPayed": "No"
+                    "isPayed": false
                 }
             },
             function (error, response, body) {
@@ -453,7 +453,7 @@ describe('Backend testing of Admin REST-API (Payment)', function () {
                 body.userAlias.should.equal("Ni234232k");
                 body.orderID.should.equal("5477151d917c51ae2633cect");
                 body.paymentAmount.should.equal(287);
-                body.isPayed.should.equal("No");
+                body.isPayed.should.equal(false);
                 done();
             })
     })
@@ -491,7 +491,7 @@ describe('Backend testing of Admin REST-API (Payment)', function () {
                         json: {
                             "orderID": "5477151d917c51ae2633abcd",
                             "paymentAmount": 1050,
-                            "isPayed": "Yes",
+                            "isPayed": true,
                             "paymentDate": "2014-12-13 14:20:05"
                         }
                     },
@@ -499,7 +499,7 @@ describe('Backend testing of Admin REST-API (Payment)', function () {
                         response.statusCode.should.equal(200);
                         body._id.should.be.length(24);
                         body.orderID.should.equal("5477151d917c51ae2633abcd");
-                        body.isPayed.should.equal("Yes");
+                        body.isPayed.should.equal(true);
                         body.paymentAmount.should.equal(1050);
                         done();
                     })

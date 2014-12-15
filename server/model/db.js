@@ -55,7 +55,7 @@ mongoose.model( 'ProductModel', productSchema,"products" );
 /** Payment SCHEMA **/
 var paymentSchema = new mongoose.Schema({
   userAlias :  String,
-  orderID : {type: String, unique: true},
+  orderID : String,
   paymentAmount : { type: Number },
   isPayed : {type: Boolean, default: false},
   paymentDate : { type: Date, default: new Date() }
